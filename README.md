@@ -27,13 +27,15 @@ Perfect for building, creative maps, or wacky game modes with zero physics!
 ## 🛠️ Configuration (`config.yml`)
 
 ```yaml
-block-gravity: true # Disables gravity for sand, gravel, etc.
-  allow-break: true # Allows breaking blocks manually if stuck
-  disabled-worlds:  # These worlds are unaffected by the plugin
+block-gravity:
+  enabled: false # true - Gravity Enabled | false - Gravity Disabled
+  allow-break: false # true - Allow Breaking Blocks with disabled gravity | false - Deny Breaking Blocks with disabled gravity
+  disabled-worlds: # List of worlds in which the plugin will not work
     - exampleWorld1
     - exampleWorld2
 
-fluids-gravity: true # Disables water/lava flow
-  disabled-worlds:   # These worlds are unaffected by the plugin
+fluids-gravity:
+  enabled: false
+  disabled-worlds:
     - exampleWorld1
     - exampleWorld2
