@@ -1,0 +1,12 @@
+block-gravity:
+  enabled: false # true - Gravity Enabled | false - Gravity Disabled
+  allow-break: false # true - Allow Breaking Blocks with disabled gravity | false - Deny Breaking Blocks with disabled gravity
+  disabled-worlds: # List of worlds in which the plugin will not work
+    - exampleWorld1
+    - exampleWorld2
+
+fluids-gravity:
+  enabled: false
+  disabled-worlds:
+    - exampleWorld1
+    - exampleWorld2
