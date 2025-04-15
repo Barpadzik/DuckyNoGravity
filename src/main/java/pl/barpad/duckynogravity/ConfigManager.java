@@ -7,19 +7,22 @@ import java.util.List;
 
 public class ConfigManager {
 
-    private final FileConfiguration config;
+    private final JavaPlugin plugin;
+    private FileConfiguration config;
 
     public ConfigManager(JavaPlugin plugin) {
+        this.plugin = plugin;
         plugin.saveDefaultConfig();
+        this.config = plugin.getConfig();
+    }
+
+    public void reload() {
+        plugin.reloadConfig();
         this.config = plugin.getConfig();
     }
 
     public boolean isBlockGravityEnabled() {
         return config.getBoolean("block-gravity.enabled", false);
-    }
-
-    public boolean isBlockBreakAllowed() {
-        return config.getBoolean("block-gravity.allow-break", false);
     }
 
     public List<String> getDisabledWorldsForBlocks() {

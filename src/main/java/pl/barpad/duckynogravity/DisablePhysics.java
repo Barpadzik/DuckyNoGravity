@@ -1,5 +1,6 @@
 package pl.barpad.duckynogravity;
 
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,19 +19,6 @@ public class DisablePhysics implements Listener {
     }
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event) {
-        Block block = event.getBlock();
-        String worldName = block.getWorld().getName();
-
-        if (config.isBlockGravityEnabled()) return;
-        if (config.getDisabledWorldsForBlocks().contains(worldName)) return;
-
-        if (block.getType().hasGravity() && !config.isBlockBreakAllowed()) {
-            event.setCancelled(true);
-        }
-    }
-
-    @EventHandler
     public void onEntityChangeBlock(EntityChangeBlockEvent event) {
         Block block = event.getBlock();
         String worldName = block.getWorld().getName();
@@ -38,7 +26,9 @@ public class DisablePhysics implements Listener {
         if (config.isBlockGravityEnabled()) return;
         if (config.getDisabledWorldsForBlocks().contains(worldName)) return;
 
-        if (block.getType().hasGravity()) {
+        Material type = block.getType();
+
+        if (type.hasGravity()) {
             event.setCancelled(true);
         }
     }
