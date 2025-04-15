@@ -12,6 +12,7 @@ public final class Main extends JavaPlugin {
         ConfigManager configManager = new ConfigManager(this);
         new DisablePhysics(this, configManager);
         new Reload(this, configManager);
+        new UpdateChecker(this).checkForUpdates();
     }
 
     @Override

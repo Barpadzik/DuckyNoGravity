@@ -1,3 +1,6 @@
 no-permission: "&9&lDuckyNoGravity &7» &cNo Permission! &6duckynogravity.reload"
 reload-success: "&9&lDuckyNoGravity &7» Configuration Reloaded!"
 usage: "&9&lDuckyNoGravity &7» &eUsage: /duckynogravity reload"
+update-available: "&9&lDuckyNoGravity &7» &eA new version is available: &c%version%"
+update-download: "&9&lDuckyNoGravity &7» &eDownload: &a%url%"
+update-check-failed: "&9&lDuckyNoGravity &7» &cCould not check for updates."
