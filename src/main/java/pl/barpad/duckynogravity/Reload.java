@@ -16,7 +16,7 @@ public class Reload extends AbstractCommand implements TabExecutor {
     private final ConfigManager configManager;
 
     public Reload(JavaPlugin plugin, ConfigManager configManager) {
-        super("duckynogravity", "nogravity.reload", "Reload Command");
+        super("duckynogravity", "duckynogravity.reload", "Reload Command");
         this.plugin = plugin;
         this.configManager = configManager;
         FileConfiguration messages = plugin.getConfig();
@@ -28,7 +28,7 @@ public class Reload extends AbstractCommand implements TabExecutor {
         FileConfiguration messages = MessagesYML.getMessages(plugin);
 
         if (args.length == 1 && args[0].equalsIgnoreCase("reload")) {
-            if (!sender.hasPermission("nogravity.reload")) {
+            if (!sender.hasPermission("duckynogravity.reload")) {
                 sender.sendMessage(color(messages.getString("no-permission", "&cYou don't have permission to use this command.")));
                 return true;
             }
